@@ -1,0 +1,4 @@
+librosa
+pyaudio
+soundfile
+numpy<2
