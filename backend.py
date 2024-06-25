@@ -128,13 +128,13 @@ def start_processes():
     text_queue = Queue()
     record_process = Process(target=record_audio, args=(audio_queue,))
     stt_process = Process(target=stt_async_worker, args=(audio_queue, text_queue))
-    tts_process = Process(target=tts_async_worker, args=(text_queue,))
+    # tts_process = Process(target=tts_async_worker, args=(text_queue,))
     record_process.start()
     stt_process.start()
-    tts_process.start()
+    # tts_process.start()
     record_process.join()
     stt_process.join()
-    tts_process.join()
+    # tts_process.join()
 
 
 if __name__ == "__main__":
